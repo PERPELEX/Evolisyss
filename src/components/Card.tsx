@@ -4,7 +4,7 @@ import { TextButton } from "./TextButton";
 
 export const Card = (
   props: ComponentPropsWithoutRef<"div"> & {
-    color?: string;
+    color?: "cyan" | "lime" | "violet" | "red" | "orange"; // Updated type
     buttonText?: string;
     link?: string;
   }
