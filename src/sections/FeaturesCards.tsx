@@ -48,7 +48,7 @@ export const FeaturesCardsSection = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState("");
     const [modalLink, setModalLink] = useState("");
-    const [modalColor, setModalColor] = useState("");
+    const [modalColor, setModalColor] = useState<"cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia" | undefined>("");
 
     useEffect(() => {
         if (isHovered) return;
@@ -60,10 +60,10 @@ export const FeaturesCardsSection = () => {
         };
     }, [selectedCardIndex, isHovered]);
 
-    const openModal = (description: string,link:string,color:string) => {
+    const openModal = (description: string, link: string, color: string) => {
         setModalContent(description);
         setModalLink(link);
-        setModalColor(color);
+        setModalColor(color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia");
         setIsModalOpen(true);
     };
 
@@ -71,7 +71,7 @@ export const FeaturesCardsSection = () => {
         setIsModalOpen(false);
         setModalContent("");
         setModalLink("");
-        setModalColor("");
+        setModalColor(undefined);
     };
 
     return (
@@ -105,8 +105,8 @@ export const FeaturesCardsSection = () => {
                                     <p className="text-lg text-zinc-400 mt-4">{description}</p>
 
                                     <div className="flex justify-between mt-12">
-                                        <button onClick={() => openModal(description,link,color)}>
-                                            <TextButton color={color}>Learn More</TextButton>
+                                        <button onClick={() => openModal(description, link, color)}>
+                                            <TextButton color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"}>Learn More</TextButton>
                                         </button>
                                         <a href={link}>
                                             {/* arrow */}
