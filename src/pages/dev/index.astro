@@ -1,0 +1,119 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+import { CallToAction } from "../../sections/CallToAction";
+import { Testimonials } from "../../sections/SerTestinomials";
+import { PricingPlans } from "../../sections/PricingPlans";
+
+const portfolioData = [
+  {
+    title: "Custom Software Solutions",
+    category: "Ecommerce Software",
+    description: "Tailored software to meet your business needs.",
+    color: "cyan",
+    images: [
+      "/assets/images/dev/ecom.png",
+    ],
+    link: ""
+  },
+  {
+    title: "Travel Agency",
+    category: "Software-Designs",
+    description: "Unique and creative Front-end Travel Agency website.",
+    color: "lime",
+    images: [
+      "/images/logo1.jpg",
+      "/images/logo2.jpg",
+    ],
+    link: ""
+  },
+  {
+    title: "CraftyAI",
+    category: "Generative AI Software",
+    description: "Comprehensive AI solutions to grow your software as a service business.",
+    color: "violet",
+    images: [
+      "/assets/images/dev/craftyai.png",
+    ],
+    link: "https://craftyai.vercel.app/"
+  },
+];
+
+const testimonials = [
+  {
+    name: "Sophia Carter",
+    feedback: "Their custom software solutions transformed our business operations. Highly professional and reliable team!",
+    company: "TechSolutions Inc.",
+  },
+  {
+    name: "James Anderson",
+    feedback: "The front-end designs were stunning and exceeded our expectations. A pleasure to work with!",
+    company: "CreativeWeb",
+  },
+];
+
+const pricingPlans = [
+  {
+    title: "Basic Development Plan",
+    price: "$1000/project",
+    features: [
+      "Static Website Development",
+      "Responsive Design",
+      "Basic SEO Optimization",
+    ],
+  },
+  {
+    title: "Advanced Development Plan",
+    price: "$3000/project",
+    features: [
+      "Dynamic Website Development",
+      "Custom Features",
+      "Advanced SEO Optimization",
+    ],
+  },
+  {
+    title: "Enterprise Development Plan",
+    price: "Custom Pricing",
+    features: [
+      "Full-Stack Development",
+      "Dedicated Support",
+      "Custom Integrations",
+    ],
+  },
+];
+---
+
+<DefaultLayout>
+  <section class="py-20 bg-zinc-900 text-white">
+    <div class="container max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl">
+        Explore the World of Software Development
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-6">
+        Software development plays a crucial role in building the digital presence of businesses and individuals alike. It encompasses a wide range of services and expertise, from creating simple static websites to developing advanced, interactive web applications.
+      </p>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        At our core, we specialize in diverse areas of software development, including:
+      </p>
+      <ul class="text-lg lg:text-xl text-zinc-400 mt-4 space-y-2 text-left mx-auto max-w-3xl">
+        <li><strong>Ecommerce Development:</strong> Custom-tailored platforms designed to enhance the online shopping experience.</li>
+        <li><strong>Front-end Development:</strong> Creative and visually appealing interfaces for websites and web apps.</li>
+        <li><strong>Generative AI Solutions:</strong> Cutting-edge artificial intelligence tools that redefine how businesses operate online.</li>
+        <li><strong>Responsive Web Design:</strong> Websites that adapt seamlessly to all screen sizes, ensuring a flawless user experience.</li>
+      </ul>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        Our portfolio showcases our dedication to providing innovative solutions tailored to the unique needs of each project. Dive into our recent work to see how we bring ideas to life.
+      </p>
+    </div>
+  </section>
+  
+  <PortfolioShowcase portfolioItems={portfolioData} />
+
+  {/* Use the React Testimonials Component */}
+  <Testimonials testimonials={testimonials} client:load />
+
+  {/* Use the React PricingPlans Component */}
+  <PricingPlans pricingPlans={pricingPlans} client:load />
+
+  <CallToAction client:load />
+</DefaultLayout>

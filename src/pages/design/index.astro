@@ -1,0 +1,107 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+import { CallToAction } from "../../sections/CallToAction";
+import { Testimonials } from "../../sections/SerTestinomials";
+import { PricingPlans } from "../../sections/PricingPlans";
+
+const graphicsDesignData = [
+  {
+    title: "Brand Identity Design",
+    category: "Graphics Design",
+    description: "Creating unique and professional brand identities.",
+    color: "purple",
+    images: [
+      "/images/graphics1.jpg",
+      "/images/graphics2.jpg",
+    ],
+    link: "craftyai.vercel.app",
+  },
+  {
+    title: "UI/UX Design",
+    category: "Graphics Design",
+    description: "Intuitive and engaging user interface designs.",
+    color: "orange",
+    images: [
+      "/images/graphics3.jpg",
+      "/images/graphics4.jpg",
+    ],
+    link: "/projects/ui-ux-design",
+  }
+];
+
+const testimonials = [
+  {
+    name: "Olivia Brown",
+    feedback: "Their brand identity designs gave our company a fresh and professional look. Highly recommended!",
+    company: "Brandify",
+  },
+  {
+    name: "Liam Johnson",
+    feedback: "The UI/UX designs were intuitive and visually stunning. They truly understood our vision.",
+    company: "TechFlow",
+  },
+];
+
+const pricingPlans = [
+  {
+    title: "Basic Design Package",
+    price: "$500/project",
+    features: [
+      "Logo Design",
+      "Color Palette",
+      "Typography Guide",
+    ],
+  },
+  {
+    title: "Advanced Design Package",
+    price: "$1500/project",
+    features: [
+      "Everything in Basic Package",
+      "UI/UX Design",
+      "Marketing Materials",
+    ],
+  },
+  {
+    title: "Custom Design Package",
+    price: "Custom Pricing",
+    features: [
+      "Tailored Brand Identity",
+      "Custom Illustrations",
+      "Dedicated Design Team",
+    ],
+  },
+];
+---
+
+<DefaultLayout>
+  <section class="py-20 bg-zinc-900 text-white">
+    <div class="container max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl">
+        Elevate Your Brand with Stunning Designs
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-6">
+        Graphic design is more than just aesthetics—it's about communicating ideas visually. Our expertise in brand identity, UI/UX, and digital illustrations helps businesses stand out in a crowded market.
+      </p>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        Our graphic design services include:
+      </p>
+      <ul class="text-lg lg:text-xl text-zinc-400 mt-4 space-y-2 text-left mx-auto max-w-3xl">
+        <li><strong>Brand Identity:</strong> Logo, color schemes, and typography for a cohesive brand image.</li>
+        <li><strong>UI/UX Design:</strong> Engaging and user-friendly digital experiences.</li>
+        <li><strong>Marketing Materials:</strong> Brochures, social media graphics, and promotional materials.</li>
+        <li><strong>Custom Illustrations:</strong> Unique visuals tailored to your brand story.</li>
+      </ul>
+    </div>
+  </section>
+
+  <PortfolioShowcase portfolioItems={graphicsDesignData} />
+
+  {/* Use the React Testimonials Component */}
+  <Testimonials testimonials={testimonials} client:load />
+
+  {/* Use the React PricingPlans Component */}
+  <PricingPlans pricingPlans={pricingPlans} client:load />
+
+  <CallToAction client:load />
+</DefaultLayout>

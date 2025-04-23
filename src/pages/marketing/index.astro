@@ -1,0 +1,95 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+import { CallToAction } from "../../sections/CallToAction";
+import { Testimonials } from "../../sections/SerTestinomials";
+import { PricingPlans } from "../../sections/PricingPlans";
+
+const digitalMarketingData = [
+  {
+    title: "Social Media Marketing",
+    category: "Digital Marketing",
+    description: "Boost your brand's online presence with targeted strategies.",
+    color: "red",
+    images: [
+      "/images/marketing1.jpg",
+    ],
+    link: "/projects/social-media-marketing",
+  }
+];
+
+const testimonials = [
+  {
+    name: "Emily Davis",
+    feedback: "Their social media campaigns were a game-changer for our brand. We saw a 200% increase in engagement!",
+    company: "BrandBoost",
+  },
+  {
+    name: "Mark Wilson",
+    feedback: "The content marketing strategies helped us connect with our audience on a deeper level. Highly recommended!",
+    company: "ContentCreators",
+  },
+];
+
+const pricingPlans = [
+  {
+    title: "Starter Plan",
+    price: "$300/month",
+    features: [
+      "Social Media Management",
+      "Content Creation",
+      "Monthly Analytics Report",
+    ],
+  },
+  {
+    title: "Growth Plan",
+    price: "$700/month",
+    features: [
+      "Everything in Starter Plan",
+      "Paid Advertising Campaigns",
+      "Weekly Performance Updates",
+    ],
+  },
+  {
+    title: "Enterprise Plan",
+    price: "Custom Pricing",
+    features: [
+      "Everything in Growth Plan",
+      "Dedicated Account Manager",
+      "Custom Marketing Strategies",
+    ],
+  },
+];
+---
+
+<DefaultLayout>
+  <section class="py-20 bg-zinc-900 text-white">
+    <div class="container max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl">
+        Unlock Growth with Digital Marketing
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-6">
+        Digital marketing is the key to reaching the right audience, increasing brand awareness, and driving sales. Our data-driven strategies ensure measurable results.
+      </p>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        Our digital marketing services include:
+      </p>
+      <ul class="text-lg lg:text-xl text-zinc-400 mt-4 space-y-2 text-left mx-auto max-w-3xl">
+        <li><strong>Social Media Marketing:</strong> Engaging campaigns that drive brand recognition.</li>
+        <li><strong>Content Marketing:</strong> High-quality blogs, videos, and infographics.</li>
+        <li><strong>Paid Advertising:</strong> Targeted ads on Google and social media for better conversions.</li>
+        <li><strong>Email Campaigns:</strong> Personalized email strategies to nurture leads and customers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <PortfolioShowcase portfolioItems={digitalMarketingData} />
+
+  {/* Use the React Testimonials Component */}
+  <Testimonials testimonials={testimonials} client:load />
+
+  {/* Use the React PricingPlans Component */}
+  <PricingPlans pricingPlans={pricingPlans} client:load />
+
+  <CallToAction client:load />
+</DefaultLayout>

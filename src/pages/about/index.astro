@@ -1,0 +1,145 @@
+---
+import { CutCornerButton } from "../../components/CutCornerButton";
+import DefaultLayout from "../../layouts/Default.astro";
+import { Hexagon } from "../../components/Hexagon";
+import { TestimonialsSection } from "../../sections/Testimonials";
+import { CallToAction } from "../../sections/CallToAction";
+import MotionWrapper from "../../components/MotionWrapper.tsx";
+---
+
+<DefaultLayout>
+
+    <section class="py-60 relative overflow-x-clip">
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Hexagon size={800} client:load duration={30} />
+        </div>
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Hexagon size={1200} client:load duration={50} reverse />
+        </div>
+        <div class="container text-center">
+            <h1 class="font-heading font-black text-5xl md:text-6xl lg:text-7xl">
+                About <span class="text-primary">Evolisyss</span>
+            </h1>
+            <p class="text-xl md:text-2xl mt-6 text-zinc-400 max-w-3xl mx-auto">
+                Empowering businesses through innovation, creativity, and technology-driven solutions.
+            </p>
+            <div class="flex justify-center mt-10">
+                <a href="/contact">
+                    <CutCornerButton>Get in Touch</CutCornerButton>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-zinc-900/30 backdrop-blur-sm overflow-x-clip">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <MotionWrapper client:only="react">
+                    <div class="bg-zinc-800 p-6 rounded-lg shadow-lg">
+                        <h2 class="font-heading font-black text-3xl">🚀 Who We Are</h2>
+                        <p class="text-lg mt-4 text-zinc-400">
+                            Evolisyss is a forward-thinking digital solutions provider dedicated to helping businesses thrive in the modern digital landscape.
+                            With expertise in <strong>Software Development, SEO Optimization, Graphics Design, Digital Marketing,</strong> and <strong>Video Animation,</strong> we bring ideas to life with cutting-edge technology and strategic insights.
+                        </p>
+                    </div>
+                </MotionWrapper>
+
+                <MotionWrapper client:only="react">
+                    <div class="bg-zinc-800 p-6 rounded-lg shadow-lg">
+                        <h2 class="font-heading font-black text-3xl">🎯 Our Mission</h2>
+                        <p class="text-lg mt-4 text-zinc-400">
+                            Our mission is to empower businesses by delivering high-quality digital solutions that drive growth, enhance user experiences, and optimize online presence.
+                            We believe in combining <strong>technology, creativity, and data-driven strategies</strong> to help businesses unlock their full potential.
+                        </p>
+                    </div>
+                </MotionWrapper>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32">
+        <div class="container">
+            <h2 class="text-4xl font-heading font-black text-center">
+                🌟 Our Core Values
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                
+                <MotionWrapper client:only="react">
+                    <div class="bg-zinc-800 p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="font-heading font-black text-2xl">🔍 Innovation</h3>
+                        <p class="text-lg mt-4 text-zinc-400">
+                            We embrace new technologies, creative approaches, and innovative solutions to ensure our clients stay ahead of the competition.
+                        </p>
+                    </div>
+                </MotionWrapper>
+
+                <MotionWrapper client:only="react">
+                    <div class="bg-zinc-800 p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="font-heading font-black text-2xl">⚡ Quality & Excellence</h3>
+                        <p class="text-lg mt-4 text-zinc-400">
+                            Every project we take on is executed with precision, ensuring that we meet and exceed our clients' expectations with top-tier quality.
+                        </p>
+                    </div>
+                </MotionWrapper>
+
+                <MotionWrapper client:only="react">
+                    <div class="bg-zinc-800 p-6 rounded-lg shadow-lg text-center">
+                        <h3 class="font-heading font-black text-2xl">🤝 Client-Centric Approach</h3>
+                        <p class="text-lg mt-4 text-zinc-400">
+                            Our clients are at the heart of everything we do. We take time to understand their unique needs and craft solutions that align with their goals.
+                        </p>
+                    </div>
+                </MotionWrapper>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-zinc-900/30">
+        <div class="container">
+            <h2 class="text-4xl font-heading font-black text-center">
+                📌 Why Choose Evolisyss?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                <MotionWrapper client:only="react">
+                    <div class="bg-zinc-800 p-6 rounded-lg shadow-lg">
+                        <h3 class="font-heading font-black text-2xl">💡 Expertise in Digital Solutions</h3>
+                        <p class="text-lg mt-4 text-zinc-400">
+                            With years of experience in <strong>software development, digital marketing, and design,</strong> we craft solutions that deliver measurable results.
+                        </p>
+                    </div>
+                </MotionWrapper>
+
+                <MotionWrapper client:only="react">
+                    <div class="bg-zinc-800 p-6 rounded-lg shadow-lg">
+                        <h3 class="font-heading font-black text-2xl">📈 Results-Driven Approach</h3>
+                        <p class="text-lg mt-4 text-zinc-400">
+                            We prioritize strategies that bring <strong>tangible growth</strong> to our clients, leveraging analytics, data, and insights to optimize performance.
+                        </p>
+                    </div>
+                </MotionWrapper>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32">
+        <div class="container text-center">
+            <h2 class="text-4xl font-heading font-black">
+                🚀 Let's Build Something Great Together!
+            </h2>
+            <p class="text-xl mt-6 text-zinc-400 max-w-3xl mx-auto">
+                Whether you need a custom software solution, high-impact digital marketing, or top-tier design services, Evolisyss is here to help.
+                Get in touch with us and let's create something extraordinary!
+            </p>
+            <div class="flex justify-center mt-10">
+                <a href="/contact">
+                    <CutCornerButton>Contact Us</CutCornerButton>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <TestimonialsSection client:load />
+    <CallToAction client:load />
+
+</DefaultLayout>

@@ -1,0 +1,95 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+import { CallToAction } from "../../sections/CallToAction";
+import { Testimonials } from "../../sections/SerTestinomials";
+import { PricingPlans } from "../../sections/PricingPlans";
+
+const seoOptimizationData = [
+  {
+    title: "SEO Optimization",
+    category: "SEO Services",
+    description: "Enhance your search engine rankings and reach more customers.",
+    color: "green",
+    images: [
+      "/images/seo1.jpg",
+    ],
+    link: "/projects/seo-optimization",
+  }
+];
+
+const testimonials = [
+  {
+    name: "John Doe",
+    feedback: "The SEO services provided by this team were outstanding. My website traffic increased by 300% within three months!",
+    company: "TechCorp",
+  },
+  {
+    name: "Jane Smith",
+    feedback: "Thanks to their SEO expertise, our business is now ranking #1 for our target keywords. Highly recommended!",
+    company: "MarketMasters",
+  },
+];
+
+const pricingPlans = [
+  {
+    title: "Basic Plan",
+    price: "$500/month",
+    features: [
+      "Keyword Research",
+      "On-Page Optimization",
+      "Monthly Reports",
+    ],
+  },
+  {
+    title: "Pro Plan",
+    price: "$1000/month",
+    features: [
+      "Everything in Basic Plan",
+      "Technical SEO",
+      "Backlink Strategy",
+    ],
+  },
+  {
+    title: "Enterprise Plan",
+    price: "Custom Pricing",
+    features: [
+      "Everything in Pro Plan",
+      "Dedicated Account Manager",
+      "Custom SEO Strategies",
+    ],
+  },
+];
+---
+
+<DefaultLayout>
+  <section class="py-20 bg-zinc-900 text-white">
+    <div class="container max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl">
+        Mastering SEO for Online Success
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-6">
+        Search Engine Optimization (SEO) is the backbone of digital visibility. Optimizing your website ensures that it ranks higher on search engines, making it easier for potential customers to find your business.
+      </p>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        Our SEO services focus on:
+      </p>
+      <ul class="text-lg lg:text-xl text-zinc-400 mt-4 space-y-2 text-left mx-auto max-w-3xl">
+        <li><strong>Keyword Research:</strong> Targeting the right keywords to maximize search rankings.</li>
+        <li><strong>On-Page Optimization:</strong> Enhancing site structure and content for better visibility.</li>
+        <li><strong>Technical SEO:</strong> Improving website speed, security, and mobile-friendliness.</li>
+        <li><strong>Backlink Strategy:</strong> Building high-quality links to establish authority.</li>
+      </ul>
+    </div>
+  </section>
+
+  <PortfolioShowcase portfolioItems={seoOptimizationData} />
+
+  {/* Use the React Testimonials Component */}
+  <Testimonials testimonials={testimonials} client:load />
+
+  {/* Use the React PricingPlans Component */}
+  <PricingPlans pricingPlans={pricingPlans} client:load />
+
+  <CallToAction client:load />
+</DefaultLayout>
