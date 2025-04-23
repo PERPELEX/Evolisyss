@@ -11,7 +11,7 @@ interface PortfolioItem {
   title: string;
   category: string;
   description: string;
-  color: "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"; // Updated type
+  color: string; // Allow generic string
   images: string[];
   link: string;
 }
@@ -44,6 +44,10 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
     return () => clearInterval(interval);
   }, [portfolioItems]);
 
+  const isValidColor = (color: string): color is "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia" => {
+    return ["cyan", "lime", "violet", "red", "orange", "fuchsia"].includes(color);
+  };
+
   return (
     <section className="py-36">
       <div className="container">
@@ -69,8 +73,8 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
               <Card
                 key={index}
                 buttonText="View Project"
-                color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"} // Cast color
-                link={link} // Dynamically pass the link
+                color={isValidColor(color) ? color : "cyan"} // Validate or fallback to "cyan"
+                link={link}
                 className={twMerge((index === 1 || index === 3) && "md:hidden")}
               >
                 <div className="relative w-full h-56 rounded-lg overflow-hidden hover:-translate-y-2 hover:duration-500 hover:transition">
@@ -88,7 +92,7 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
                     />
                   ))}
                 </div>
-                <Tag color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"}>{category}</Tag> {/* Cast color */}
+                <Tag color={isValidColor(color) ? color : "cyan"}>{category}</Tag> {/* Validate or fallback */}
                 <h3 className="font-heading font-black text-3xl mt-3">{title}</h3>
                 <p className="text-lg text-zinc-400 mt-6">{description}</p>
               </Card>
@@ -101,8 +105,8 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
               <Card
                 key={index}
                 buttonText="View Project"
-                color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"} // Cast color
-                link={link} // Dynamically pass the link
+                color={isValidColor(color) ? color : "cyan"} // Validate or fallback to "cyan"
+                link={link}
                 className={twMerge((index === 0 || index === 2) && "md:hidden")}
               >
                 <div className="relative w-full h-56 rounded-lg overflow-hidden hover:-translate-y-2 hover:duration-500 hover:transition">
@@ -120,7 +124,7 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
                     />
                   ))}
                 </div>
-                <Tag color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"}>{category}</Tag> {/* Cast color */}
+                <Tag color={isValidColor(color) ? color : "cyan"}>{category}</Tag> {/* Validate or fallback */}
                 <h3 className="font-heading font-black text-3xl mt-3">{title}</h3>
                 <p className="text-lg text-zinc-400 mt-6">{description}</p>
               </Card>
