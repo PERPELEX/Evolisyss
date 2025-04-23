@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 type TextButtonProps = ComponentPropsWithoutRef<"button"> & {
-  color?: "cyan" | "lime" | "violet" | "red" | "orange";
+  color?: "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"; // Added "fuchsia"
 };
 
 export const TextButton = ({
@@ -21,6 +21,7 @@ export const TextButton = ({
         color === "violet" && "text-violet-500",
         color === "red"    && "text-red-500",
         color === "orange" && "text-orange-500",
+        color === "fuchsia" && "text-fuchsia-500", // Added "fuchsia" styling
         className
       )}
     >

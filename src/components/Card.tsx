@@ -4,7 +4,7 @@ import { TextButton } from "./TextButton";
 
 export const Card = (
   props: ComponentPropsWithoutRef<"div"> & {
-    color?: "cyan" | "lime" | "violet" | "red" | "orange"; // Updated type
+    color?: "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"; // Added "fuchsia"
     buttonText?: string;
     link?: string;
   }
@@ -33,7 +33,8 @@ export const Card = (
           color === "lime" && "bg-lime-500",
           color === "violet" && "bg-violet-500",
           color === "red" && "bg-red-500",
-          color === "orange" && "bg-orange-500"
+          color === "orange" && "bg-orange-500",
+          color === "fuchsia" && "bg-fuchsia-500" // Added "fuchsia" styling
         )}
       ></div>
       <div
@@ -43,7 +44,8 @@ export const Card = (
           color === "lime" && "bg-lime-500 group-hover:bg-lime-300",
           color === "violet" && "bg-violet-500 group-hover:bg-violet-300",
           color === "red" && "bg-red-500 group-hover:bg-red-300",
-          color === "orange" && "bg-orange-500 group-hover:bg-orange-300"
+          color === "orange" && "bg-orange-500 group-hover:bg-orange-300",
+          color === "fuchsia" && "bg-fuchsia-500 group-hover:bg-fuchsia-300" // Added "fuchsia" hover styling
         )}
       ></div>
 
