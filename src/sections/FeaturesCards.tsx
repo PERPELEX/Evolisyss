@@ -48,7 +48,7 @@ export const FeaturesCardsSection = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState("");
     const [modalLink, setModalLink] = useState("");
-    const [modalColor, setModalColor] = useState<"cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia" | undefined>("");
+    const [modalColor, setModalColor] = useState<"cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia" | undefined>("cyan");
 
     useEffect(() => {
         if (isHovered) return;
