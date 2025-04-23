@@ -11,7 +11,7 @@ interface PortfolioItem {
   title: string;
   category: string;
   description: string;
-  color: string;
+  color: "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"; // Updated type
   images: string[];
   link: string;
 }
@@ -69,7 +69,7 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
               <Card
                 key={index}
                 buttonText="View Project"
-                color={color}
+                color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"} // Cast color
                 link={link} // Dynamically pass the link
                 className={twMerge((index === 1 || index === 3) && "md:hidden")}
               >
@@ -88,7 +88,7 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
                     />
                   ))}
                 </div>
-                <Tag color={color}>{category}</Tag>
+                <Tag color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"}>{category}</Tag> {/* Cast color */}
                 <h3 className="font-heading font-black text-3xl mt-3">{title}</h3>
                 <p className="text-lg text-zinc-400 mt-6">{description}</p>
               </Card>
@@ -101,7 +101,7 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
               <Card
                 key={index}
                 buttonText="View Project"
-                color={color}
+                color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"} // Cast color
                 link={link} // Dynamically pass the link
                 className={twMerge((index === 0 || index === 2) && "md:hidden")}
               >
@@ -120,7 +120,7 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
                     />
                   ))}
                 </div>
-                <Tag color={color}>{category}</Tag>
+                <Tag color={color as "cyan" | "lime" | "violet" | "red" | "orange" | "fuchsia"}>{category}</Tag> {/* Cast color */}
                 <h3 className="font-heading font-black text-3xl mt-3">{title}</h3>
                 <p className="text-lg text-zinc-400 mt-6">{description}</p>
               </Card>

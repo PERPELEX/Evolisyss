@@ -81,7 +81,7 @@ export const FeaturesCardsSection = () => {
 
                 <div className="mt-36 lg:mt-48 flex">
                     <div className="flex flex-none gap-8">
-                        {cardData.map(({ image, title, description, color, link }, cardIndex) => (
+                        {cardData.map(({ image, title, description, color, link }, _cardIndex) => (
                             <div 
                                 className="inline-flex transition-all duration-500"
                                 onMouseEnter={() => setIsHovered(true)}
